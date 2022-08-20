@@ -26,3 +26,13 @@ If your new Grawlix site is giving you internal server errors, there's a line in
 Again, you may need to 'Show Hidden Files' in order to see the `.htaccess` file.
 
 \*FTP CLIENTS: Some hosts provide a web FTP client, but some free ones you can download include [Cyberduck](https://cyberduck.io/) and [Filezilla](https://filezilla-project.org/).
+
+UPDATING AN EXISTING INSTALL
+---
+
+If you're upgrading an existing install of Grawlix, you should be able to just overwrite the files. However, keep the following in mind:
+- From the root directory, the only files you should replace are `functions.inc.php` and `index.php`. The others contain configuration specific to your site, keep them! Do replace the files in the subdirectories though.
+- You can skip the `themes` subdirectory if you don't care to use the updated default themes.
+- If your existing comic has any Disqus comments, you may want to compare `assets/snippets/snippet.comments.php` with your existing one, and possibly comment out line that sets `disqus_identifier`. If you have no existing comments, then overwrite this file.
+- If you modified the default themes instead of making new ones, don't overwrite those or you'll lose your changes.
+- If you're upgrading from Grawlix 1.2 or older, make sure you follow the additional steps in `upgradeupgrade-readme.html`.
